@@ -8,13 +8,10 @@
     <meta name="description" content="主要参考书：
 
 
-
-
-
 深度学习基础——线性神经网络，多层感知机
 卷积神经网络——LeNet,AlexNet,VGG,Inception,ResNet
 循环神经网络——RNN,GRU,LSTM,seq2seq
-注意力机制——Attentio">
+注意力机制——Attention,T">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -406,10 +403,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>主要参考书：</p>
-<img src="https://zh-v2.d2l.ai/_images/front.png" alt="img" style="zoom:45%;" />
-
-
-
+<p><img src="https://zh-v2.d2l.ai/_images/front.png" alt="img" style="zoom:45%;" /></p>
 <ul>
 <li><strong>深度学习基础</strong>——线性神经网络，多层感知机</li>
 <li><strong>卷积神经网络</strong>——LeNet,AlexNet,VGG,Inception,ResNet</li>
@@ -420,19 +414,33 @@
 <li><strong>计算机视觉</strong>——目标检测，语义分割</li>
 <li><strong>自然语言处理</strong>——词嵌入，BERT</li>
 </ul>
-<h2 id="线性回归（linear-regression）"><a href="#线性回归（linear-regression）" class="headerlink" title="线性回归（linear regression）"></a>线性回归（linear regression）</h2><p>线性假设：预测结果可以表示为d个特征特征(feature)的加权和<br>$$<br>\hat{y}&#x3D;w_1 x_1+\ldots+w_d x_d+b<br> \tag{1}<br>$$<br>上式是输入特征的一个仿射变换（affine transformation）,仿射变换的特点：通过加权和对特征进行线性变换（linear transformation),并通过偏置项来进行平移（translation）。</p>
-<p>将所有特征放入向量 $ \mathbf{x} \in \mathbb{R}^d $中，将所有权重放到向量$\mathbf{w} \in \mathbb{R}^{d_{}}$中，点积形式表示该模型<br>$$<br>\hat{y}&#x3D;\mathbf{w}^{\top} \mathbf{x}+b \tag{2}<br>$$<br>向量x:单个数据样本的特征</p>
+<h2 id="线性回归（linear-regression）"><a href="#线性回归（linear-regression）" class="headerlink" title="线性回归（linear regression）"></a>线性回归（linear regression）</h2><p>线性假设：预测结果可以表示为d个特征特征(feature)的加权和</p>
+<script type="math/tex; mode=display">
+\hat{y}=w_1 x_1+\ldots+w_d x_d+b
+ \tag{1}</script><p>上式是输入特征的一个仿射变换（affine transformation）,仿射变换的特点：通过加权和对特征进行线性变换（linear transformation),并通过偏置项来进行平移（translation）。</p>
+<p>将所有特征放入向量 $ \mathbf{x} \in \mathbb{R}^d $中，将所有权重放到向量$\mathbf{w} \in \mathbb{R}^{d_{}}$中，点积形式表示该模型</p>
+<script type="math/tex; mode=display">
+\hat{y}=\mathbf{w}^{\top} \mathbf{x}+b \tag{2}</script><p>向量x:单个数据样本的特征</p>
 <p>矩阵$\mathbf{X} \in \mathbb{R}^{n \times d}$：整个数据集的n个样本。一行是一个样本，一列是一种特征。</p>
-<h3 id="损失函数（loss-function）——均方误差"><a href="#损失函数（loss-function）——均方误差" class="headerlink" title="损失函数（loss function）——均方误差"></a>损失函数（loss function）——均方误差</h3><p>平方误差函数：<br>$$<br>l^{(i)}(\mathbf{w}, b)&#x3D;\frac{1}{2}\left(\hat{y}^{(i)}-y^{(i)}\right)^2 \tag{3}<br>$$<br>计算在训练集n个样本上的损失均值<br>$$<br>L(\mathbf{w}, b)&#x3D;\frac{1}{n} \sum_{i&#x3D;1}^n l^{(i)}(\mathbf{w}, b)&#x3D;\frac{1}{n} \sum_{i&#x3D;1}^n \frac{1}{2}\left(\mathbf{w}^{\top} \mathbf{x}^{(i)}+b-y^{(i)}\right)^2 \tag{4}<br>$$<br>优化问题：<br>$$<br>\mathbf{w}^*, b^*&#x3D;\underset{\mathbf{w}, b}{\operatorname{argmin}} L(\mathbf{w}, b) \tag{5}<br>$$<br><strong>最小化目标函数和执行极大似然估计等价</strong></p>
+<h3 id="损失函数（loss-function）——均方误差"><a href="#损失函数（loss-function）——均方误差" class="headerlink" title="损失函数（loss function）——均方误差"></a>损失函数（loss function）——均方误差</h3><p>平方误差函数：</p>
+<script type="math/tex; mode=display">
+l^{(i)}(\mathbf{w}, b)=\frac{1}{2}\left(\hat{y}^{(i)}-y^{(i)}\right)^2 \tag{3}</script><p>计算在训练集n个样本上的损失均值</p>
+<script type="math/tex; mode=display">
+L(\mathbf{w}, b)=\frac{1}{n} \sum_{i=1}^n l^{(i)}(\mathbf{w}, b)=\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^{\top} \mathbf{x}^{(i)}+b-y^{(i)}\right)^2 \tag{4}</script><p>优化问题：</p>
+<script type="math/tex; mode=display">
+\mathbf{w}^*, b^*=\underset{\mathbf{w}, b}{\operatorname{argmin}} L(\mathbf{w}, b) \tag{5}</script><p><strong>最小化目标函数和执行极大似然估计等价</strong></p>
 <h3 id="优化方法：随机梯度下降"><a href="#优化方法：随机梯度下降" class="headerlink" title="优化方法：随机梯度下降"></a>优化方法：随机梯度下降</h3><p>梯度下降（gradient descent):计算损失函数（数据集中所有样本的损失均值）关于模型参数的导数</p>
 <p>小批量随机梯度下降（minibatch sochastic gradient descent）:在每次需要计算更新的时候随机抽取一小批样本。</p>
 <p><img src="C:\Users\yi\AppData\Roaming\Typora\typora-user-images\image-20230319221153652.png" alt="image-20230319221153652"></p>
 <p>对于线性回归，每个输入都与每个输出相连，这种变换称为全连接层（fully connected layer）或稠密层（dense layer）.</p>
-<h2 id="softmax回归——分类问题"><a href="#softmax回归——分类问题" class="headerlink" title="softmax回归——分类问题"></a>softmax回归——分类问题</h2><h3 id="损失函数——对数似然"><a href="#损失函数——对数似然" class="headerlink" title="损失函数——对数似然"></a>损失函数——对数似然</h3><p>交叉熵损失（cross-entropy loss）:<br>$$<br>l(\mathbf{y}, \hat{\mathbf{y}})&#x3D;-\sum_{j&#x3D;1}^q y_j \log \hat{y}_j<br>$$</p>
-<h2 id="多层感知机（MLP-multilayer-perception）——最简单的神经网络-1960年"><a href="#多层感知机（MLP-multilayer-perception）——最简单的神经网络-1960年" class="headerlink" title="多层感知机（MLP,multilayer perception）——最简单的神经网络 1960年"></a>多层感知机（MLP,multilayer perception）——最简单的神经网络 1960年</h2><p>多层感知机：将许多全连接层堆叠在一起。每一层都输出到上面的层，直到生成最后的输出。最后一层为线性预测器。</p>
-<p>感知机：二分类问题输出0&#x2F;1<br>$$<br>o&#x3D;\sigma(\langle\mathbf{w}, \mathbf{x}\rangle+b) \quad \sigma(x)&#x3D; \begin{cases}1 &amp; \text { if } x&gt;0 \ 0 &amp; \text { otherwise }\end{cases}<br>$$<br>相比之下：</p>
-<p>​	回归输出实数</p>
-<p>​	Softmax回归输出概率</p>
+<h2 id="softmax回归——分类问题"><a href="#softmax回归——分类问题" class="headerlink" title="softmax回归——分类问题"></a>softmax回归——分类问题</h2><h3 id="损失函数——对数似然"><a href="#损失函数——对数似然" class="headerlink" title="损失函数——对数似然"></a>损失函数——对数似然</h3><p>交叉熵损失（cross-entropy loss）:</p>
+<script type="math/tex; mode=display">
+l(\mathbf{y}, \hat{\mathbf{y}})=-\sum_{j=1}^q y_j \log \hat{y}_j</script><h2 id="多层感知机（MLP-multilayer-perception）——最简单的神经网络-1960年"><a href="#多层感知机（MLP-multilayer-perception）——最简单的神经网络-1960年" class="headerlink" title="多层感知机（MLP,multilayer perception）——最简单的神经网络 1960年"></a>多层感知机（MLP,multilayer perception）——最简单的神经网络 1960年</h2><p>多层感知机：将许多全连接层堆叠在一起。每一层都输出到上面的层，直到生成最后的输出。最后一层为线性预测器。</p>
+<p>感知机：二分类问题输出0/1</p>
+<script type="math/tex; mode=display">
+o=\sigma(\langle\mathbf{w}, \mathbf{x}\rangle+b) \quad \sigma(x)= \begin{cases}1 & \text { if } x>0 \\ 0 & \text { otherwise }\end{cases}</script><p>相比之下：</p>
+<p>​    回归输出实数</p>
+<p>​    Softmax回归输出概率</p>
 <p>训练感知机：</p>
 <p><img src="C:\Users\yi\AppData\Roaming\Typora\typora-user-images\image-20230319224230419.png" alt="image-20230319224230419"></p>
 <p>若判断条件大于0，则代表分类正确。</p>
@@ -577,9 +585,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2023/03/26/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%972/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2023/03/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%971/">
@@ -610,43 +654,6 @@
                     </div>
                 </div>
 
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/03/19/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            John Doe
-                            
-                        </span>
-                    </div>
-                </div>
                 
             </div>
         </div>
@@ -1100,6 +1107,21 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
