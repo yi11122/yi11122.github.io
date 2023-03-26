@@ -7,9 +7,31 @@
     <meta name="keywords" content="Hexo">
     <meta name="description" content="卷积那点事儿~1.卷积基本概念
 2.图像滤波器与卷积计算过程
-3.图像滤波定义
-4.图像去噪
-5.边缘检测">
+3.图像去噪
+
+4.边缘检测
+
+
+
+卷积神经网络1.pytorch
+
+
+2.基本概念
+
+
+
+
+
+
+3.LeNet-5网络
+
+
+
+
+
+
+4.反向误差传播
+基本卷积神经网络AlexN">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -401,10 +423,32 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="卷积那点事儿"><a href="#卷积那点事儿" class="headerlink" title="卷积那点事儿~"></a>卷积那点事儿~</h1><h2 id="1-卷积基本概念"><a href="#1-卷积基本概念" class="headerlink" title="1.卷积基本概念"></a>1.卷积基本概念</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326134902194.png" alt="image-20230326134921718"></p>
-<h2 id="2-图像滤波器与卷积计算过程"><a href="#2-图像滤波器与卷积计算过程" class="headerlink" title="2.图像滤波器与卷积计算过程"></a>2.图像滤波器与卷积计算过程</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326135203962.png" alt="image-20230326134902194"></p>
-<h2 id="3-图像滤波定义"><a href="#3-图像滤波定义" class="headerlink" title="3.图像滤波定义"></a>3.图像滤波定义</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326135223171.png" alt="image-20230326135131941"></p>
-<h2 id="4-图像去噪"><a href="#4-图像去噪" class="headerlink" title="4.图像去噪"></a>4.图像去噪</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326135131941.png" alt="image-20230326135203962"></p>
-<h2 id="5-边缘检测"><a href="#5-边缘检测" class="headerlink" title="5.边缘检测"></a>5.边缘检测</h2>
+<h2 id="2-图像滤波器与卷积计算过程"><a href="#2-图像滤波器与卷积计算过程" class="headerlink" title="2.图像滤波器与卷积计算过程"></a>2.图像滤波器与卷积计算过程</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233232164.png" alt="image-20230326233232164"></p>
+<h2 id="3-图像去噪"><a href="#3-图像去噪" class="headerlink" title="3.图像去噪"></a>3.图像去噪</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233355298.png" alt="image-20230326233355298"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233328709.png" alt="image-20230326233328709"></p>
+<h2 id="4-边缘检测"><a href="#4-边缘检测" class="headerlink" title="4.边缘检测"></a>4.边缘检测</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233421846.png" alt="image-20230326233421846"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233437775.png" alt="image-20230326233437775"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233455706.png" alt="image-20230326233455706"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233517334.png" alt="image-20230326233517334"></p>
+<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><h2 id="1-pytorch"><a href="#1-pytorch" class="headerlink" title="1.pytorch"></a>1.pytorch</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233753822.png" alt="image-20230326233753822"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233840140.png" alt="image-20230326233840140"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326233928672.png" alt="image-20230326233928672"></p>
+<h2 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2.基本概念"></a>2.基本概念</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234243087.png" alt="image-20230326234243087"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234259648.png" alt="image-20230326234259648"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234316584.png" alt="image-20230326234316584"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234334446.png" alt="image-20230326234334446"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234410785.png" alt="image-20230326234410785"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234502001.png" alt="image-20230326234502001"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234528582.png" alt="image-20230326234528582"></p>
+<h2 id="3-LeNet-5网络"><a href="#3-LeNet-5网络" class="headerlink" title="3.LeNet-5网络"></a>3.LeNet-5网络</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234610177.png" alt="image-20230326234610177"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234834574.png" alt="image-20230326234834574"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234852333.png" alt="image-20230326234852333"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326234911011.png" alt="image-20230326234911011"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326235033520.png" alt="image-20230326235033520"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326235103320.png" alt="image-20230326235103320"></p>
+<p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326235128815.png" alt="image-20230326235128815"></p>
+<h2 id="4-反向误差传播"><a href="#4-反向误差传播" class="headerlink" title="4.反向误差传播"></a>4.反向误差传播</h2><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230326235231539.png" alt="image-20230326235231539"></p>
+<h1 id="基本卷积神经网络"><a href="#基本卷积神经网络" class="headerlink" title="基本卷积神经网络"></a>基本卷积神经网络</h1><h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><h2 id="VGG-16"><a href="#VGG-16" class="headerlink" title="VGG-16"></a>VGG-16</h2><h2 id="残差网络"><a href="#残差网络" class="headerlink" title="残差网络"></a>残差网络</h2><h2 id="Inception网路"><a href="#Inception网路" class="headerlink" title="Inception网路"></a>Inception网路</h2><h1 id="常用数据集"><a href="#常用数据集" class="headerlink" title="常用数据集"></a>常用数据集</h1><h2 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h2><h2 id="PASCAL-VOC"><a href="#PASCAL-VOC" class="headerlink" title="PASCAL VOC"></a>PASCAL VOC</h2><h2 id="MS-COCO"><a href="#MS-COCO" class="headerlink" title="MS COCO"></a>MS COCO</h2><h2 id="ImageNet"><a href="#ImageNet" class="headerlink" title="ImageNet"></a>ImageNet</h2>
                 
             </div>
             <hr/>
