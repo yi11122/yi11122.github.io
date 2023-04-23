@@ -4,14 +4,22 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="神经网络日志3, Hexo">
-    <meta name="description" content="深度学习视觉应用评价指标准确率越高，召回率越低。
-mAP 均值平均准确率
-目标检测与Yolo网络目标检测=图片分类+方框位置
-COCO数据集
-一步法（two-stage）:无需候选框，直接出结果。
-滑动窗口滑动次数太多，计算太慢。
-目标大小">
+    <meta name="keywords" content="神经网络日志4, Hexo">
+    <meta name="description" content="循环神经网络与NLP数据处理基础特征编码文本处理
+
+
+
+
+文本处理与词嵌入
+
+
+
+
+RNN模型RNN概要
+RNN模型
+RNN示例
+LSTM模型
+文本生成">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +31,7 @@ COCO数据集
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>神经网络日志3 | Hexo</title>
+    <title>神经网络日志4 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -340,12 +348,12 @@ COCO数据集
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">神经网络日志3</h1>
+                    <h1 class="description center-align post-title">神经网络日志4</h1>
                 </div>
             </div>
         </div>
@@ -381,7 +389,7 @@ COCO数据集
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-04-03
+                    2023-04-23
                 </div>
                 
 
@@ -402,29 +410,21 @@ COCO数据集
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="深度学习视觉应用"><a href="#深度学习视觉应用" class="headerlink" title="深度学习视觉应用"></a>深度学习视觉应用</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><p>准确率越高，召回率越低。</p>
-<p>mAP 均值平均准确率</p>
-<h2 id="目标检测与Yolo网络"><a href="#目标检测与Yolo网络" class="headerlink" title="目标检测与Yolo网络"></a>目标检测与Yolo网络</h2><p>目标检测=图片分类+方框位置</p>
-<p>COCO数据集</p>
-<p>一步法（two-stage）:无需候选框，直接出结果。</p>
-<h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><p>滑动次数太多，计算太慢。</p>
-<p>目标大小不同，每一个滑动位置需要用很多框。</p>
-<p>小目标问题——》使用单独网络拟合小目标，即设置多个bounding box</p>
-<h3 id="YOLO基本思想"><a href="#YOLO基本思想" class="headerlink" title="YOLO基本思想"></a>YOLO基本思想</h3><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/87b58e04e9f0c5a43abd6913799c1c6.jpg" alt="87b58e04e9f0c5a43abd6913799c1c6"></p>
-<p>YOLO包围框</p>
-<p>YOLO置信度</p>
-<p>训练值与预测值</p>
-<h3 id="损失函数设计"><a href="#损失函数设计" class="headerlink" title="损失函数设计"></a>损失函数设计</h3><p><img src="http://yiblog.oss-cn-beijing.aliyuncs.com/img/image-20230403000319324.png" alt="image-20230403000319324"></p>
-<h2 id="目标检测实现"><a href="#目标检测实现" class="headerlink" title="目标检测实现"></a>目标检测实现</h2><h2 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h2><p>重要数据集Pascal VOC2012</p>
-<p>由于语义分割的输入图像和标签在像素上一一对应，所以将图像随机裁剪成固定尺寸而不是缩放。</p>
-<p>Deeplab v3是目前广泛使用的语义分割方法。</p>
-<h3 id="样式迁移的损失函数"><a href="#样式迁移的损失函数" class="headerlink" title="样式迁移的损失函数"></a>样式迁移的损失函数</h3><p>内容损失 content loss</p>
-<p>样式损失 style loss</p>
-<p>总变差损失 total variation loss</p>
-<h2 id="风格迁移、人脸识别"><a href="#风格迁移、人脸识别" class="headerlink" title="风格迁移、人脸识别"></a>风格迁移、人脸识别</h2><h2 id="视觉应用展望"><a href="#视觉应用展望" class="headerlink" title="视觉应用展望"></a>视觉应用展望</h2><p>生成对抗网络（GANs,generative adversarial networks）</p>
-<p>模型通过框架中（至少）两个模块：生成模型（Generative Model）和判别模型（Discriminative Model）的相互博弈学习产生相当好的输出。最后达到一种平衡（纳什平衡）</p>
-<p>一个优秀的GAN需要有良好的训练方法，因为它自由性容易导致输出不理想。</p>
-
+                <h1 id="循环神经网络与NLP"><a href="#循环神经网络与NLP" class="headerlink" title="循环神经网络与NLP"></a>循环神经网络与NLP</h1><h2 id="数据处理基础"><a href="#数据处理基础" class="headerlink" title="数据处理基础"></a>数据处理基础</h2><h3 id="特征编码"><a href="#特征编码" class="headerlink" title="特征编码"></a>特征编码</h3><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423121949266.png" alt="image-20230423121949266"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122021569.png" alt="image-20230423122021569"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122045260.png" alt="image-20230423122045260"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122104150.png" alt="image-20230423122104150"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122132111.png" alt="image-20230423122132111"></p>
+<h2 id="文本处理与词嵌入"><a href="#文本处理与词嵌入" class="headerlink" title="文本处理与词嵌入"></a>文本处理与词嵌入</h2><p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122202293.png" alt="image-20230423122202293"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122223437.png" alt="image-20230423122223437"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122250213.png" alt="image-20230423122250213"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122316023.png" alt="image-20230423122316023"></p>
+<p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122349158.png" alt="image-20230423122349158"></p>
+<h2 id="RNN模型"><a href="#RNN模型" class="headerlink" title="RNN模型"></a>RNN模型</h2><h3 id="RNN概要"><a href="#RNN概要" class="headerlink" title="RNN概要"></a>RNN概要</h3><p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122647185.png" alt="image-20230423122647185"></p>
+<h3 id="RNN模型-1"><a href="#RNN模型-1" class="headerlink" title="RNN模型"></a>RNN模型</h3><p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122706023.png" alt="image-20230423122706023"></p>
+<h3 id="RNN示例"><a href="#RNN示例" class="headerlink" title="RNN示例"></a>RNN示例</h3><p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122729216.png" alt="image-20230423122729216"></p>
+<h2 id="LSTM模型"><a href="#LSTM模型" class="headerlink" title="LSTM模型"></a>LSTM模型</h2><p><img src="C:/Users/yi/AppData/Roaming/Typora/typora-user-images/image-20230423122750633.png" alt="image-20230423122750633"></p>
+<h1 id="文本生成"><a href="#文本生成" class="headerlink" title="文本生成"></a>文本生成</h1>
                 
             </div>
             <hr/>
@@ -450,7 +450,7 @@ COCO数据集
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/04/03/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%973/">http://example.com/2023/04/03/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%973/</a>
+                    <a href="http://example.com/2023/04/23/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%974/">http://example.com/2023/04/23/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%974/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -564,9 +564,10 @@ COCO数据集
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2023/04/23/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%974/">
                     <div class="card-image">
@@ -584,9 +585,9 @@ COCO数据集
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -595,6 +596,7 @@ COCO数据集
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -605,13 +607,13 @@ COCO数据集
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/26/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%972/">
+                <a href="/2023/04/03/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%973/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="神经网络日志3">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">神经网络日志3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -622,7 +624,7 @@ COCO数据集
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
                             </span>
                         <span class="publish-author">
                             
